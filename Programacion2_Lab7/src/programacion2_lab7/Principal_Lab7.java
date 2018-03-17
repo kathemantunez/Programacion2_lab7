@@ -31,12 +31,6 @@ public class Principal_Lab7 extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
-        boton_wam = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         pricipal_boton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -46,58 +40,16 @@ public class Principal_Lab7 extends javax.swing.JFrame {
         nombre_LAN = new javax.swing.JTextField();
         v_trans_LAN = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        boton_wam = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        rou1 = new javax.swing.JTextField();
+        rou2 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        boton_wam.setText("Enalzar");
-        boton_wam.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                boton_wamMouseClicked(evt);
-            }
-        });
-
-        jLabel4.setText("IP router 1");
-
-        jLabel5.setText("IP router 2");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(260, 260, 260)
-                        .addComponent(boton_wam)))
-                .addContainerGap(769, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
-                .addComponent(boton_wam)
-                .addContainerGap(393, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("WAN", jPanel2);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -129,6 +81,29 @@ public class Principal_Lab7 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("LAN", jPanel1);
 
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        boton_wam.setText("Enalzar");
+        boton_wam.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                boton_wamMouseClicked(evt);
+            }
+        });
+        jPanel2.add(boton_wam, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 208, -1, -1));
+
+        jLabel4.setText("IP router 1");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 70, -1, -1));
+
+        jLabel5.setText("IP router 2");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 131, -1, -1));
+        jPanel2.add(rou1, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 67, 232, -1));
+        jPanel2.add(rou2, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 128, 232, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/programacion2_lab7/cisco.png"))); // NOI18N
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jTabbedPane1.addTab("WAN", jPanel2);
+
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 16, -1, -1));
 
         pack();
@@ -155,7 +130,41 @@ public class Principal_Lab7 extends javax.swing.JFrame {
         // TODO add your handling code here:
         rou.getLista_router();
         
-        
+         boolean existe1=false;
+            boolean existe2=false;
+            
+            for (int i = 0; i < rou.getLista_router().size(); i++) {
+               if(rou.getLista_router().get(i).equals(rou1.getText())){
+                   existe1=true;
+               }
+            }
+            for (int i = 0; i < rou.getLista_router().size(); i++) {
+               if(rou.getLista_router().get(i).equals(rou2.getText())){
+                   existe2=true;
+               }
+            }
+            
+            
+            if(existe1==true &&existe2==true){
+                for (int i = 0; i < rou.getLista_router().size(); i++) {
+               if(rou.getLista_router().get(i).equals(rou1.getText())){
+                   R.setRou(rou.getLista_router().get(i));
+                   System.out.println(R.getRou());
+               }
+                }
+                for (int i = 0; i < rou.getLista_router().size(); i++) {
+               if(rou.getLista_router().get(i).equals(rou2.getText())){
+                   R.setRou(rou.getLista_router().get(i));
+                   System.out.println(R.getRou());
+               }
+                }
+                
+            
+            JOptionPane.showMessageDialog(this, "Routers enlazados");
+            }else{
+                 JOptionPane.showMessageDialog(this, "Routers no enlazados");
+            }
+            
     }//GEN-LAST:event_boton_wamMouseClicked
 
     /**
@@ -202,13 +211,14 @@ public class Principal_Lab7 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField nombre_LAN;
     public javax.swing.JButton pricipal_boton;
+    private javax.swing.JTextField rou1;
+    private javax.swing.JTextField rou2;
     private javax.swing.JTextField v_trans_LAN;
     // End of variables declaration//GEN-END:variables
 
@@ -216,5 +226,6 @@ public class Principal_Lab7 extends javax.swing.JFrame {
 ArrayList<LAN>  lan=new ArrayList();
 //switch_1 s=new switch_1();
 admi_router rou =new admi_router();
+Router R=new Router();
         
 }

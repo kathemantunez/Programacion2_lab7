@@ -73,7 +73,7 @@ public class admi_pc {
      
      try {
          
-         fw=new FileOutputStream(archivo);
+         fw=new FileOutputStream(archivo,true);
          bw=new ObjectOutputStream(fw);
          for (PC t : lista_pc) {
              bw.writeObject(t);

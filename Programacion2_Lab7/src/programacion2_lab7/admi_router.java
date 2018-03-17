@@ -77,7 +77,7 @@ public class admi_router {
      
      try {
          
-         fw=new FileOutputStream(archivo);
+         fw=new FileOutputStream(archivo,true);
          bw=new ObjectOutputStream(fw);
          for (Router t : lista_router) {
              bw.writeObject(t);
